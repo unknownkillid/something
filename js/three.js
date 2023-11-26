@@ -89,23 +89,23 @@ rickLoader.load(
   'assets/hand/scene.gltf',
   function (gltf2) {
     rickModel = gltf2.scene;
-    rickModel.position.set(-9.6, 0.5, -10);
+    rickModel.position.set(-9.8, 0.5, -9.8);
     rickModel.rotation.z = 0;
-    rickModel.rotation.y = 1.5;
+    rickModel.rotation.y = -0.2;
     rickModel.rotation.x = 0;
-    rickModel.scale.set(6, 6, 6)
+    rickModel.scale.set(0.1, 0.1, 0.1)
     scene.add(rickModel);
 
     const mixer = new THREE.AnimationMixer(rickModel);
     
-    // Play only the first animation
-    if (gltf2.animations.length > 0) {
-      const firstAnimation = gltf2.animations[0];
-      const action = mixer.clipAction(firstAnimation);
-      action.setLoop(THREE.LoopRepeat);
-      action.clampWhenFinished = true;
-      action.play();
-    }
+    // // Play only the first animation
+    // if (gltf2.animations.length > 0) {
+    //   const firstAnimation = gltf2.animations[0];
+    //   const action = mixer.clipAction(firstAnimation);
+    //   action.setLoop(THREE.LoopRepeat);
+    //   action.clampWhenFinished = true;
+    //   action.play();
+    // }
 
     rickModel.traverse(function (child) {
       if (child.isMesh) {
@@ -113,12 +113,12 @@ rickLoader.load(
       }
     });
 
-    function animate() {
-      requestAnimationFrame(animate);
-      mixer.update(0.004);
-      renderer.render(scene, camera);
-    }
-    animate();
+    // function animate() {
+    //   requestAnimationFrame(animate);
+    //   mixer.update(0.004);
+    //   renderer.render(scene, camera);
+    // }
+    // animate();
 
     renderer.domElement.addEventListener('mousemove', onHover);
     renderer.domElement.addEventListener('click', onClick);

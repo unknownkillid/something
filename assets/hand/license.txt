@@ -1,11 +1,11 @@
 Model Information:
-* title:	The Steampunk Vault
-* source:	https://sketchfab.com/3d-models/the-steampunk-vault-b381d06f61d44b77bfe666582b5e44e9
-* author:	Levi Moresi (https://sketchfab.com/LeviJM)
+* title:	Money Stacks Low Poly
+* source:	https://sketchfab.com/3d-models/money-stacks-low-poly-a9ce7f1cd9614376b39a96a1698d9109
+* author:	bossdeff (https://sketchfab.com/bossdeff)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "The Steampunk Vault" (https://sketchfab.com/3d-models/the-steampunk-vault-b381d06f61d44b77bfe666582b5e44e9) by Levi Moresi (https://sketchfab.com/LeviJM) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Money Stacks Low Poly" (https://sketchfab.com/3d-models/money-stacks-low-poly-a9ce7f1cd9614376b39a96a1698d9109) by bossdeff (https://sketchfab.com/bossdeff) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

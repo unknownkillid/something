@@ -13,9 +13,6 @@ $main-font-family: "Patrick Hand", cursive;
 
 body {
   overflow: hidden;
-  cursor:
-    url("../assets/Untitled-2.png") -20 -20,
-    auto !important;
   position: relative;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -694,7 +691,7 @@ header {
 
 * {
   cursor:
-    url("../assets/Untitled-2.png") -20 -20,
+    url("../assets/Untitled-2.png") -10 -10,
     auto !important;
 }
 
