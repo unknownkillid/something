@@ -1,11 +1,11 @@
 Model Information:
-* title:	Grey Alien Bust
-* source:	https://sketchfab.com/3d-models/grey-alien-bust-b23e063c2d44485c827d5d82d118a61e
-* author:	crowempires (https://sketchfab.com/crowempires)
+* title:	Assassin
+* source:	https://sketchfab.com/3d-models/assassin-38079a31509046c5bc688f6d12c64a4a
+* author:	techykitty (https://sketchfab.com/techykitty)
 
 Model License:
-* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
-* requirements:	Author must be credited. Commercial use is allowed.
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Grey Alien Bust" (https://sketchfab.com/3d-models/grey-alien-bust-b23e063c2d44485c827d5d82d118a61e) by crowempires (https://sketchfab.com/crowempires) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Assassin" (https://sketchfab.com/3d-models/assassin-38079a31509046c5bc688f6d12c64a4a) by techykitty (https://sketchfab.com/techykitty) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

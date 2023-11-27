@@ -97,7 +97,7 @@ rickLoader.load(
     scene.add(rickModel);
 
     const mixer = new THREE.AnimationMixer(rickModel);
-    
+
     // // Play only the first animation
     // if (gltf2.animations.length > 0) {
     //   const firstAnimation = gltf2.animations[0];
@@ -158,7 +158,7 @@ secondModelLoader.load(
 
     function animate() {
       requestAnimationFrame(animate);
-      mixer.update(0.004);
+      mixer.update(0.020);
       renderer.render(scene, camera);
     }
     animate();
@@ -177,8 +177,9 @@ thirdModelLoader.load(
   'assets/sea/scene.gltf',
   function (gltf) {
     thirdModel = gltf.scene;
-    thirdModel.position.set(0.4, 1.4, 0.3);
-    thirdModel.rotation.y = 0;
+    thirdModel.position.set(-8.8, 0.6, -10.1);
+    thirdModel.scale.set(0.2, 0.2, 0.2)
+    thirdModel.rotation.y = 4;
     scene.add(thirdModel);
 
     thirdModel.traverse(function (child) {
@@ -207,7 +208,7 @@ fourthModelLoader.load(
   'assets/alien/scene.gltf',
   function (gltf) {
     fourthModel = gltf.scene;
-    fourthModel.position.set(0.2, 0.6, 5.0);
+    fourthModel.position.set(-8.8, 0.6, -10.1);
     fourthModel.rotation.y = 1.5;
     scene.add(fourthModel);
 
@@ -412,7 +413,7 @@ function onClick(event) {
       projectsOpening.play();
       isMouseEventsEnabled = false;
       openedCheck();
-     
+
       function ifopened() {
         if (!countIsOpened) {
           setTimeout(() => {
@@ -443,11 +444,11 @@ function onClick(event) {
   function countdown(seconds) {
     var countdownElement = document.getElementById("countdown");
     countdownElement.innerHTML = seconds + "...";
-  
+
     if (seconds >= 0) {
-      setTimeout(function() {
+      setTimeout(function () {
         countdown(seconds - 1);
-      }, 1000); 
+      }, 1000);
     } else {
       countdownElement.innerHTML = "Opening Projects!";
       setTimeout(() => {
@@ -472,7 +473,7 @@ function onClick(event) {
       }, 100);
     }
   }
-  
+
 
   if (fourthModel) {
     const intersectsFourth = raycaster.intersectObject(fourthModel, true);
@@ -514,7 +515,7 @@ directionalLight.position.x = -1;
 
 document.querySelectorAll('.XBtn').forEach(buttons => {
   buttons.addEventListener('click', () => {
-    cameraDefaultPositionTween() 
+    cameraDefaultPositionTween()
     isMouseEventsEnabled = true
     header.classList.remove('headerTransition')
   })
@@ -540,11 +541,11 @@ document.addEventListener("mouseup", onMouseUp);
 
 const rangeInput = document.getElementById('rangeMusic');
 
-rangeInput.addEventListener('mousedown', function() {
+rangeInput.addEventListener('mousedown', function () {
   const value = rangeInput.value;
   isMouseEventsEnabled = false;
 });
-rangeInput.addEventListener('mouseup', function() {
+rangeInput.addEventListener('mouseup', function () {
   const value = rangeInput.value;
   isMouseEventsEnabled = true;
 });
@@ -591,8 +592,8 @@ var video = document.getElementById('video');
 
 // Create a texture
 var videoTexture = new THREE.VideoTexture(video);
-videoTexture.minFilter = THREE.LinearFilter;
-videoTexture.magFilter = THREE.LinearFilter;
+videoTexture.minFilter = THREE.NearestFilter;
+videoTexture.magFilter = THREE.NearestFilter;
 videoTexture.format = THREE.RGBAFormat;
 
 var material = new THREE.MeshBasicMaterial({ map: videoTexture });
@@ -606,6 +607,7 @@ scene.add(tvScreen);
 
 function animate() {
   requestAnimationFrame(animate);
+
   camera.rotation.y += rotationSpeed;
   renderer.render(scene, camera);
   TWEEN.update();
