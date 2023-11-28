@@ -16,7 +16,7 @@ camera.position.y = 1.5;
 // camera.position.y = 18;
 camera.rotation.y = 0;
 
-const renderer = new THREE.WebGLRenderer();
+var renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById("container").appendChild(renderer.domElement);
 
@@ -135,9 +135,9 @@ secondModelLoader.load(
   'assets/tech/model/scene.gltf',
   function (gltf) {
     secondModel = gltf.scene;
-    secondModel.position.set(-11.5, 0, -12.5);
+    secondModel.position.set(-8, 0, -9.7);
     secondModel.rotation.z = 0;
-    secondModel.rotation.y = 1.3;
+    secondModel.rotation.y = -1.6;
     secondModel.scale.set(0.50, 0.50, 0.50)
     scene.add(secondModel);
 
@@ -158,7 +158,7 @@ secondModelLoader.load(
 
     function animate() {
       requestAnimationFrame(animate);
-      mixer.update(0.020);
+      mixer.update(0.006);
       renderer.render(scene, camera);
     }
     animate();
@@ -208,15 +208,35 @@ fourthModelLoader.load(
   'assets/alien/scene.gltf',
   function (gltf) {
     fourthModel = gltf.scene;
-    fourthModel.position.set(-8.8, 0.6, -10.1);
+    fourthModel.position.set(-11, 0, -10);
     fourthModel.rotation.y = 1.5;
+    fourthModel.scale.set(0.014, 0.01, 0.01)
     scene.add(fourthModel);
+
+    const mixer = new THREE.AnimationMixer(fourthModel);
+
+    
+    // Play only the first animation
+    if (gltf.animations.length > 0) {
+      const firstAnimation = gltf.animations[0];
+      const action = mixer.clipAction(firstAnimation);
+      action.setLoop(THREE.LoopRepeat);
+      action.clampWhenFinished = true;
+      action.play();
+    }
 
     fourthModel.traverse(function (child) {
       if (child.isMesh) {
         child.userData.defaultMaterial = child.material;
       }
     });
+
+     function animate() {
+      requestAnimationFrame(animate);
+      mixer.update(0.004);
+      renderer.render(scene, camera);
+    }
+    animate();
 
     renderer.domElement.addEventListener('mousemove', onHover);
     renderer.domElement.addEventListener('click', onClick);
